@@ -1,11 +1,29 @@
+// src/App.js
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Navigation from './components/Navigation/Navigation';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import Specials from './components/Specials/Specials';
+import Testimonials from './components/Testimonials/Testimonials';
+import AboutSummary from './components/AboutSummary/AboutSummary';
 
-function App() {
+const App = () => {
     return (
-        <div>
-            <h1>Welcome to Little Lemon</h1>
-        </div>
+        <Router>
+            <div>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/specials" element={<Specials />} />
+                    <Route path="/testimonials" element={<Testimonials />} />
+                    <Route path="/about-summary" element={<AboutSummary />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
     );
-}
+};
 
 export default App;

@@ -1,0 +1,22 @@
+/* src/components/Navigation/Navigation.css */
+.navigation ul {
+    list-style: none;  /* Removes default list styling */
+    margin: 25px;         /* Removes default margin */
+    padding: 0;        /* Removes default padding */
+    text-align: center; /* Centers the list items if needed */
+}
+
+.navigation li {
+    display: inline-block; /* Displays list items inline with spacing */
+    margin-right: 20px;    /* Adds space between items */
+}
+
+.navigation a {
+    text-decoration: none; /* Removes underline from links */
+    color: #000;           /* Sets text color, change as needed */
+    font-weight: bold;     /* Optional: makes text bold */
+}
+
+.navigation a:hover {
+    color: #555;           /* Change color on hover */
+}

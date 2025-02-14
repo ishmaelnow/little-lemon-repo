@@ -1,0 +1,43 @@
+.intro {
+    display: flex;
+    justify-content: space-between; /* Spreads the child elements across the space */
+    align-items: center; /* Vertically aligns children in the center */
+    background-color: #055305;
+    color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    position: relative; /* Allows absolute positioning relative to this container */
+    margin-right:200x; /* Moves the section 20px to the right */
+}
+
+.reserve-button {
+    position: absolute; /* Position relative to the nearest positioned ancestor (.intro) */
+    bottom: 0px; /* Position at the bottom of the .intro div */
+    left: 20px; /* Position at the left of the .intro div */
+    background-color: #FFCC00;
+    color: rgb(22, 2, 2);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.image-container {
+    position: relative; /* Establishes a positioning context for absolute positioning */
+    overflow: visible; /* Allows elements to extend beyond the container */
+    height: 90px; /* Example height, adjust as necessary */
+}
+
+.pogo {
+    width: 300px; /* Desired width */
+    height: 200px; /* Increased height to extend downward */
+    border-radius: 15px; /* Rounded corners */
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+    position: absolute; /* Position absolutely within its container */
+    top: 10%; /* Moves the top of the image **below** the container */
+    right: 0; /* Aligns image to the right within the container */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Optional shadow for depth */
+}

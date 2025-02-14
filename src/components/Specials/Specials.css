@@ -1,0 +1,85 @@
+/* Background and general styling for Specials section */
+.specials {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Flex container to align h2 and button */
+.specials-header {
+    display: flex;
+    justify-content: space-between; /* Keeps h2 on the left, button on the right */
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 10px; /* Keeps positioning fixed */
+    padding: 0 250px; /* Ensures alignment matches dishes */
+}
+
+/* Position h2 ("Specials") above the first dish */
+.specials-header h2 {
+    text-align: left;
+    margin: 0;
+    margin-left: -35px; /* Moves h2 slightly to the left */
+}
+
+
+/* Move the "Order Now" button above the last dish */
+.online-menu-button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: black;
+    font-size: 16px;
+    margin-right: 50;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.online-menu-button:hover {
+    background-color: #e6b800;
+}
+
+/* Keep dishes in a row */
+.special-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px; /* Keeps dishes fixed in place */
+}
+
+/* Style for individual dish cards */
+.special {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+}
+
+/* Ensure images are properly sized and aligned */
+.special img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Styling for dish titles */
+.special h3 {
+    color: #333;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Styling for descriptions */
+.special p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}

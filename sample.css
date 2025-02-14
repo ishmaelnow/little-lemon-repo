@@ -1,0 +1,62 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Karla', sans-serif; /* Assuming Karla is available or use similar */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #495E57; /* Dark green from the brand palette */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    width: 100px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.hero {
+    background: #EDEFEE; /* Light grey from the palette */
+    padding: 40px;
+    text-align: center;
+}
+
+.specials {
+    padding: 40px;
+    background: #F4CE14; /* Yellow from the palette */
+    text-align: center;
+}
+
+footer {
+    background: #333333; /* Dark from the palette */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    background: #F4CE14; /* Yellow from the palette */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
