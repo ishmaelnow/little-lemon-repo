@@ -1,4 +1,5 @@
 import React from 'react';
+import './Hero.css'; // Import CSS from the same folder
 
 const Hero = () => {
     return (

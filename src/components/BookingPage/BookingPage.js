@@ -1,56 +1,53 @@
 import React, { useState } from "react";
-import "./BookingPage.css"; // Import CSS for styling
 
-const BookingPage = () => {
-    // State to store form data
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        date: "",
-        time: "",
-        guests: 1
-    });
+const BookingPage = ({ availableTimes, dispatch }) => {
+  const [bookingData, setBookingData] = useState([]);
 
-    // Handle input changes
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleBooking = (time) => {
+    const newBooking = {
+      id: bookingData.length + 1,
+      time: time,
+      date: new Date().toISOString().split("T")[0], // Store today's date
     };
+    setBookingData([...bookingData, newBooking]); // Update booking list
+  };
 
-    // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert(`Booking Confirmed for ${formData.name} on ${formData.date} at ${formData.time}`);
-        // Here you can send data to a backend or save it in state
-    };
+  return (
+    <div>
+      <h2>Available Booking Times</h2>
+      <ul>
+        {availableTimes.map((time, index) => (
+          <li key={index}>
+            {time} <button onClick={() => handleBooking(time)}>Book</button>
+          </li>
+        ))}
+      </ul>
 
-    return (
-        <div className="booking-container">
-            <h2>Book a Table at Little Lemon</h2>
-            <form onSubmit={handleSubmit} className="booking-form">
-                <label>
-                    Name:
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-                </label>
-                
-                <label>
-                    Email:
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                </label>
-                <label>
-                    Date:     <input type="date" name="date" value={formData.date} onChange={handleChange} required />
-                </label>
-                <label>
-                    Time:
-                    <input type="time" name="time" value={formData.time} onChange={handleChange} required />
-                </label>
-                <label>
-                    Number of Guests:
-                    <input type="number" name="guests" value={formData.guests} min="1" onChange={handleChange} required />
-                </label>
-                <button type="submit">Confirm Booking</button>
-            </form>
-        </div>
-    );
+      <h2>Bookings Table</h2>
+      {bookingData.length > 0 ? (
+        <table border="1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Time</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {bookingData.map((booking) => (
+              <tr key={booking.id}>
+                <td>{booking.id}</td>
+                <td>{booking.time}</td>
+                <td>{booking.date}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>No bookings yet.</p>
+      )}
+    </div>
+  );
 };
 
 export default BookingPage;

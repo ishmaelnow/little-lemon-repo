@@ -8,7 +8,7 @@ function Navigation() {
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/specials">Specials</Link></li>
-                <li><Link to="/customersay">CustomersSay</Link></li>
+                <li><Link to="/customerSay">CustomersSay</Link></li>
                 <li><Link to="/about-summary">About</Link></li>
                 <li><Link to="/chicago">Chicago</Link></li>
                 <li><Link to="/booking">Booking</Link></li>  {/* ✅ Added Booking Link */}

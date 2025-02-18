@@ -1,20 +1,10 @@
 .hero {
-    background-color: #ccffcc; /* Light green background */
+    background-color: none;
+    color: white;
     padding: 20px;
-    text-align: center;
-    width: 60%; /* Keep reduced width */
-    margin: 0 auto; /* Keep centered */
+    text-align: left; /* Align text to the left */
+    width: 60%; /* Maintain the reduced width */
+    margin-left: 0; /* Move to the left */
     position: relative; /* Enables movement */
     top: -30px; /* Moves the section upward (adjust as needed) */
-}
-
-.hero-title {
-    font-size: 2rem;
-    color: #333333;
-}
-
-.hero-text {
-    font-size: 1.2rem;
-    color: #666666;
-    margin-left: 15px; /* Moves text slightly to the right */
 }

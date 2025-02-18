@@ -6,10 +6,11 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: auto; /* ✅ Ensures proper centering */
     display: flex;  /* ✅ Makes it horizontal */
     justify-content: center;  /* ✅ Centers the links */
     gap: 20px; /* ✅ Adds space between links */
+    text-align: center;
 }
 
 nav li {

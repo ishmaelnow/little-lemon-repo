@@ -1,0 +1,26 @@
+import React, { useReducer } from "react";
+import AppRoutes from "../Routes/AppRoutes"; // ✅ Ensure the correct path
+
+// Function to initialize available times
+const initializeTimes = () => ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+
+// Reducer function to update available times (can be expanded with real logic)
+const updateTimes = (state, action) => {
+  if (action.type === "UPDATE_TIMES") {
+    return initializeTimes(); // Placeholder: Currently returns the same times for any date
+  }
+  return state;
+};
+
+const Main = () => {
+  // useReducer to manage available times state
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
+
+  return (
+    <main>
+      <AppRoutes availableTimes={availableTimes} dispatch={dispatch} /> {/* ✅ Passes state & dispatch */}
+    </main>
+  );
+};
+
+export default Main;
