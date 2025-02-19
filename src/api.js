@@ -11,7 +11,7 @@ const seededRandom = function (seed) {
 
 export const fetchAPI = function(date) {
     let result = [];
-    let random = seededRandom(new Date(date).getDate()); // Ensure date is handled properly
+    let random = seededRandom(new Date(date).getDate());
 
     for (let i = 17; i <= 23; i++) {
         if (random() < 0.5) {
@@ -26,6 +26,6 @@ export const fetchAPI = function(date) {
 };
 
 export const submitAPI = function(formData) {
-    console.log("Submitting booking:", formData);
-    return true;
+    console.log("Submitting booking:", formData); // ✅ Keep it the same (no backend yet)
+    return true; // ✅ Simulate a successful submission
 };

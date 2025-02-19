@@ -1,36 +1,38 @@
-/* src/components/BookingPage/BookingPage.css */
+/* BookingPage.css */
 .booking-container {
-    text-align: center;
-    max-width: 400px;
+    max-width: 800px;
     margin: auto;
     padding: 20px;
-}
-
-.booking-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.booking-form label {
-    font-weight: bold;
-}
-
-.booking-form input {
-    padding: 8px;
-    font-size: 16px;
+    text-align: center;
+  }
+  
+  .time-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .time-item {
+    margin: 10px 0;
+  }
+  
+  .booking-table {
     width: 100%;
-}
-
-.booking-form button {
-    background-color: #ff6600;
-    color: white;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .booking-table th,
+  .booking-table td {
+    border: 1px solid #ddd;
     padding: 10px;
-    font-size: 18px;
-    border: none;
-    cursor: pointer;
-}
-
-.booking-form button:hover {
-    background-color: #e55e00;
-}
+    text-align: left;
+  }
+  
+  .booking-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .no-bookings {
+    color: gray;
+    font-style: italic;
+  }

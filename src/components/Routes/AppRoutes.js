@@ -6,8 +6,9 @@ import CustomersSay from "../CustomersSay/CustomersSay";
 import AboutSummary from "../AboutSummary/AboutSummary";
 import Chicago from "../Chicago/Chicago";
 import BookingPage from "../BookingPage/BookingPage";
+import ConfirmedBooking from "../ConfirmedBooking/ConfirmedBooking";
 
-const AppRoutes = ({ availableTimes, dispatch }) => {
+const AppRoutes = ({ availableTimes, dispatch, submitForm, lastBooking }) => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -17,8 +18,9 @@ const AppRoutes = ({ availableTimes, dispatch }) => {
       <Route path="/chicago" element={<Chicago />} />
       <Route 
         path="/booking" 
-        element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />} 
+        element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} 
       />
+      <Route path="/confirmed" element={<ConfirmedBooking lastBooking={lastBooking} />} /> {/* ✅ Pass lastBooking */}
     </Routes>
   );
 };

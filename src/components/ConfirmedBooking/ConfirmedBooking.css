@@ -1,0 +1,30 @@
+/* ConfirmedBooking.css */
+.confirmation-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background-color: #e8f5e9;
+  }
+  
+  .confirmation-details p {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .home-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .home-button:hover {
+    background-color: #45a049;
+  }
+  
