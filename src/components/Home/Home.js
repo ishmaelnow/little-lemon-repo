@@ -1,12 +1,14 @@
-// src/components/Home/Home.js
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
-import Hero from "../Hero/Hero"; // Corrected path
-import Specials from "../Specials/Specials"; // Corrected path
-import CustomersSay from "../CustomersSay/CustomersSay"; // Corrected path
-import AboutSummary from "../AboutSummary/AboutSummary"; // Corrected path
+import Hero from "../Hero/Hero";
+import Specials from "../Specials/Specials";
+import CustomersSay from "../CustomersSay/CustomersSay";
+import AboutSummary from "../AboutSummary/AboutSummary";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="intro">
@@ -14,7 +16,10 @@ const Home = () => {
         <div className="image-container">
           <img src="/images/salad.png" alt="Salad" className="pogo" />
         </div>
-        <button className="reserve-button">Reserve a Table</button>
+        {/* ✅ Updated Reserve Button to Navigate to Booking Page */}
+        <button className="reserve-button" onClick={() => navigate("/booking")}>
+          Reserve a Table
+        </button>
       </div>
       <Specials />
       <CustomersSay />
