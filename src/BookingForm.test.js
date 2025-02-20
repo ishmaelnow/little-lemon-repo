@@ -53,3 +53,52 @@ test("Calls dispatch when date is selected", () => {
   expect(mockDispatch).toHaveBeenCalledTimes(1); // ✅ Expect dispatch to be called
   expect(mockDispatch).toHaveBeenCalledWith({ type: "UPDATE_TIMES", payload: "2025-02-19" });
 });
+
+
+
+describe("Booking Form", () => {
+  test("Submission is disabled if required fields are empty or invalid", () => {
+    const mockSubmit = jest.fn();
+
+    render(<BookingForm availableTimes={["17:00", "18:00"]} dispatch={() => {}} submitForm={mockSubmit} />);
+
+    // Select elements
+    const nameInput = screen.getByLabelText(/Full Name/i);
+    const dateInput = screen.getByLabelText(/Choose Date/i);
+    const timeInput = screen.getByLabelText(/Choose Time/i);
+    const guestsInput = screen.getByLabelText(/Number of Guests/i);
+    const phoneInput = screen.getByLabelText(/Phone Number/i);
+    const submitButton = screen.getByRole("button");
+
+    // Ensure the button is initially disabled
+    expect(submitButton).toHaveAttribute("disabled");
+
+    // Simulate filling out some, but not all fields
+    fireEvent.change(nameInput, { target: { value: "" } }); // Empty name
+    fireEvent.change(dateInput, { target: { value: "2026-01-01" } });
+    fireEvent.change(timeInput, { target: { value: "18:00" } });
+    fireEvent.change(guestsInput, { target: { value: "2" } });
+    fireEvent.change(phoneInput, { target: { value: "123" } }); // Invalid phone number
+
+    // Try clicking submit
+    fireEvent.click(submitButton);
+
+    // Ensure submit function was NOT called
+    expect(mockSubmit).not.toHaveBeenCalled();
+    expect(submitButton).toHaveAttribute("disabled");
+
+    // Fix phone number and name, then try again
+    fireEvent.change(nameInput, { target: { value: "John Doe" } });
+    fireEvent.change(phoneInput, { target: { value: "4698357520" } });
+
+    // Ensure submit button is enabled
+    expect(submitButton).not.toHaveAttribute("disabled");
+
+    // Click submit again
+    fireEvent.click(submitButton);
+
+    // Ensure submit function is now called
+    expect(mockSubmit).toHaveBeenCalledTimes(1);
+  });
+});
+
